@@ -50,10 +50,10 @@ TEST_CASE("StreamReader 6400/3000") {
 
     REQUIRE(3000 == reader.getBytes(buffer, 3000));
     REQUIRE(3000 == reader.getBytes(buffer, 3000));
-    REQUIRE_THAT(buffer, Catch::StartsWith("       \n0x002E"));
+    REQUIRE_THAT(buffer, Catch::StartsWith("       \n0x002f"));
 
     REQUIRE(400 == reader.getBytes(buffer, 3000)); // EOF
-    REQUIRE_THAT(buffer, Catch::StartsWith("y.             \n0x005D"));
+    REQUIRE_THAT(buffer, Catch::StartsWith("y.             \n0x005e"));
 }
 
 // Covers the case where requests are larger than one block
@@ -67,6 +67,6 @@ TEST_CASE("StreamReader 16000 / 9000") {
 
     REQUIRE(7000 == reader.getBytes(buffer, 9000)); // EOF
 
-    REQUIRE_THAT(buffer, Catch::StartsWith("e Jack a dull boy."));
-    REQUIRE_THAT(buffer + 7000 - 64, Catch::StartsWith("0x00F9"));
+    REQUIRE_THAT(buffer, Catch::StartsWith(" dull boy."));
+    REQUIRE_THAT(buffer + 7000 - 64, Catch::StartsWith("0x00f9"));
 }
