@@ -8,4 +8,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include_directories(../include)
 
-add_executable(StreamReader stream_reader_test.cpp block_reader.cpp)
+add_executable(StreamReaderTest stream_reader_test.cpp block_reader.cpp)
