@@ -5,14 +5,14 @@
 
 class Node {
 public:
-    Node() : left(nullptr), right(nullptr), next(nullptr), val(0);
-    Node(int val) : left(nullptr), right(nullptr), next(nullptr), val(val);
+    Node() : left(nullptr), right(nullptr), next(nullptr), val(0) { }
+    Node(int val) : left(nullptr), right(nullptr), next(nullptr), val(val) { }
 
     Node* left;
     Node* right;
     Node* next;
     int val;
-}
+};
 
 // Given a tree made by `Node`s (as defined above), link each node to the next
 // one on the same level.  If a node is the right-most Node in the level, it
@@ -25,7 +25,7 @@ public:
 //        /     / \              /     / \
 //       D     E   F            D---->E-->F
 
-void LinkNodesInTree(Node* root) {
+void LinkNodes(Node* root) {
     // Your code here
 }
 

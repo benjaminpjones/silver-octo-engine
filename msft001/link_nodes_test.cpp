@@ -1,10 +1,12 @@
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
 
-#include "link_tree_nodes.hpp"
+#include "link_nodes.hpp"
 #include "node_util.hpp"
 
 #include <optional>
+
+using std::nullopt;
 
 TEST_CASE("Perfectly balanced 3 levels") {
     //      1
