@@ -44,12 +44,14 @@ TEST_CASE("Sparse tree") {
     Node* root = make_tree<Node>({1, 2, 3, 4, nullopt, 5, 6, nullopt,
                                   7, 8, 9, nullopt, 10});
 
+    LinkNodes(root);
+
     // level 0
     CHECK(root->next == nullptr);
 
     // level 1
-    CHECK(root->left == root->right);
-    CHECK(root->right == nullptr);
+    CHECK(root->left->next == root->right);
+    CHECK(root->right->next == nullptr);
 
     // level 2
     CHECK(root->left->left->next == root->right->left);
@@ -60,5 +62,5 @@ TEST_CASE("Sparse tree") {
     CHECK(root->left->left->right->next == root->right->left->left);
     CHECK(root->right->left->left->next == root->right->left->right);
     CHECK(root->right->left->right->next == root->right->right->right);
-    CHECK(root->right->right->right == nullptr);
+    CHECK(root->right->right->right->next == nullptr);
 }
